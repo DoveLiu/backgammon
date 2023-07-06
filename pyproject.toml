@@ -12,7 +12,21 @@ pygame = "^2.5.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.3.0"
+ruff = "^0.0.277"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+select = [
+  "E",   # pycodestyle
+  "F",   # pyflakes
+  "UP",  # pyupgrade
+  "I"    # isort
+]
+line-length = 120
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
+
