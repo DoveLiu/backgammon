@@ -1,5 +1,5 @@
 import pygame
-from resource.FrontendConfig import FrontendConfig
+from resource.frontend_config import FrontendConfig
 
 # 棋盤
 class Board(pygame.sprite.Sprite):

@@ -1,7 +1,7 @@
 import pygame
-from resource.FrontendConfig import FrontendConfig
-from frontend.Board import Board
-from frontend.Gui import Gui
+from resource.frontend_config import FrontendConfig
+from frontend.board import Board
+from frontend.gui import Gui
 
 # pygame setup
 pygame.init()

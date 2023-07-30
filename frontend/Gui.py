@@ -1,6 +1,6 @@
 import pygame
-from frontend.Board import Board
-from resource.FrontendConfig import FrontendConfig
+from frontend.board import Board
+from resource.frontend_config import FrontendConfig
 
 # 遊戲介面
 class Gui(pygame.sprite.Sprite):

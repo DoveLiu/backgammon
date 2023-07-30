@@ -7,6 +7,7 @@ class FrontendConfig():
     GUI_HIGH = 720
     GUI_WIDTH = 1280
 
+    WHITE = "#F0F0F0"
     GUI_COLOR = '#F0F0F0'
 
     # 儲存格長度
