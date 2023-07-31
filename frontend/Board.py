@@ -6,7 +6,7 @@ class Board(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
     
-    def get_Surface(self) -> pygame.Surface:
+    def get_surface(self) -> pygame.Surface:
         """
         獲取矩形棋盤背景物件
         """

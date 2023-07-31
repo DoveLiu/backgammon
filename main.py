@@ -16,7 +16,7 @@ dt = 0
 
 # 繪製棋盤相關操作
 board = Board()
-board_surface = board.get_Surface()
+board_surface = board.get_surface()
 board.draw_board(board_surface)
 board.draw_star_point(board_surface)
 
