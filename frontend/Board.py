@@ -4,7 +4,7 @@ from resource.frontend_config import FrontendConfig
 # 棋盤
 class Board(pygame.sprite.Sprite):
     def __init__(self):
-        pygame.sprite.Sprite.__init__(self)
+        super().__init__()
     
     def get_surface(self) -> pygame.Surface:
         """
