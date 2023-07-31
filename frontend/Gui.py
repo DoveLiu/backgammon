@@ -5,8 +5,7 @@ from resource.frontend_config import FrontendConfig
 # 遊戲介面
 class Gui(pygame.sprite.Sprite):
     def __init__(self):
-        pygame.sprite.Sprite.__init__(self)
-        # pygame.init()
+        super().__init__()
 
     def get_Surface (self) -> pygame.Surface:
         """
