@@ -8,7 +8,7 @@ class FrontendConfig():
     GUI_WIDTH = 1280
 
     WHITE = "#F0F0F0"
-    GUI_COLOR = '#F0F0F0'
+    LIGHT_GRAY_COLOR = '#F0F0F0'
 
     # 儲存格長度
     CELL_LEN = 40

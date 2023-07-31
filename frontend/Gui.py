@@ -14,7 +14,7 @@ class Gui(pygame.sprite.Sprite):
 
         high = FrontendConfig.GUI_HIGH
         width = FrontendConfig.GUI_WIDTH
-        color = FrontendConfig.GUI_COLOR
+        color = FrontendConfig.LIGHT_GRAY_COLOR
         
         screen = pygame.display.set_mode((width, high))
         screen.fill(color)
