@@ -1,14 +1,14 @@
-class FrontendConfig():
-    BLACK = 'black'
+class FrontendConfig:
+    BLACK = "black"
     # 棋盤顏色
-    BOARD_COLOR = '#FFE153'
+    BOARD_COLOR = "#FFE153"
 
     # 遊戲介面長寬
     GUI_HIGH = 720
     GUI_WIDTH = 1280
 
     WHITE = "#F0F0F0"
-    LIGHT_GRAY_COLOR = '#F0F0F0'
+    LIGHT_GRAY_COLOR = "#F0F0F0"
 
     # 儲存格長度
     CELL_LEN = 40

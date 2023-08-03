@@ -1,7 +1,9 @@
+
 import pygame
-from resource.frontend_config import FrontendConfig
+
 from frontend.board import Board
 from frontend.gui import Gui
+
 
 def main():
     # pygame setup
@@ -13,7 +15,6 @@ def main():
 
     clock = pygame.time.Clock()
     running = True
-    dt = 0
 
     # 繪製棋盤相關操作
     board = Board()
@@ -38,9 +39,10 @@ def main():
         # limits FPS to 60
         # dt is delta time in seconds since last frame, used for framerate-
         # independent physics.
-        dt = clock.tick(60) / 1000
+        clock.tick(60) / 1000
 
     pygame.quit()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
