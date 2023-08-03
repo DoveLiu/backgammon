@@ -10,7 +10,7 @@ class Board(pygame.sprite.Sprite):
         # 棋盤線條數量 ( 幾乘幾的棋盤 )
         self.line_count = 15
         # 棋盤總長度
-        self.board_len = self.cell_len * (self.line_count + 1 )
+        self.board_len_count = self.cell_len * (self.line_count + 1 )
         # 棋盤背景色
         self.light_yellow_color = '#FFE153'
         #  四角 + 中間圓點的大小，數字越大，圓越大
@@ -22,10 +22,10 @@ class Board(pygame.sprite.Sprite):
         """
 
         # 棋盤總長度
-        board_len = self.board_len
+        board_len_count = self.board_len_count
         board_color = self.light_yellow_color
 
-        board = pygame.Surface(size=(board_len, board_len))
+        board = pygame.Surface(size=(board_len_count, board_len_count))
         board.fill(board_color)
         return board
     

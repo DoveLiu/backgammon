@@ -31,10 +31,10 @@ class Gui(pygame.sprite.Sprite):
         
         gui_high = self.high
         gui_width = self.width
-        board_len = board.board_len
+        board_len_count = board.board_len_count
 
-        board_init_width = (gui_width - board_len) / 2 
-        borad_init_high = (gui_high - board_len) / 2
+        board_init_width = (gui_width - board_len_count) / 2 
+        board_init_high = (gui_high - board_len_count) / 2
         # 要把 Surface 元素畫在哪，目前置中
-        gui_surface.blit(board_surface, (board_init_width, borad_init_high))
+        gui_surface.blit(board_surface, (board_init_width, board_init_high))
     
