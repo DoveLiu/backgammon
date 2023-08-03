@@ -68,18 +68,21 @@ class Board(pygame.sprite.Sprite):
         # 儲存格長度
         cell_len = self.cell_len
         # 棋盤線條數量 ( 幾乘幾的棋盤 )
-        line_count = self.line_count
+        board_line_count = self.line_count
 
         star_point_width = self.star_point_width
-        star_point_len_4 = 4  * cell_len
-        star_point_len_back_4 = (line_count - 3) * cell_len
-        star_point_len_center = ((line_count + 1) / 2)  * cell_len
-        star_point_list = [
-            (star_point_len_4, star_point_len_4) ,
-            (star_point_len_4, star_point_len_back_4),
-            (star_point_len_back_4, star_point_len_4),
-            (star_point_len_back_4, star_point_len_back_4),
-            (star_point_len_center, star_point_len_center)
+
+        len_4_pos = 4  * cell_len
+        len_back_4_pos = (board_line_count - 3) * cell_len
+        len_center_pos = ((board_line_count + 1) / 2)  * cell_len
+
+        # 繪製比較粗的圓點清單
+        star_point_pos_list = [
+            (len_4_pos, len_4_pos) ,
+            (len_4_pos, len_back_4_pos),
+            (len_back_4_pos, len_4_pos),
+            (len_back_4_pos, len_back_4_pos),
+            (len_center_pos, len_center_pos)
         ]
-        for i in range(len(star_point_list)):
-            pygame.draw.circle(surface, black, star_point_list[i], star_point_width)
+        for i in range(len(star_point_pos_list)):
+            pygame.draw.circle(surface, black, star_point_pos_list[i], star_point_width)
