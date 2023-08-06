@@ -27,7 +27,7 @@ def main():
         # limits FPS to 60
         # dt is delta time in seconds since last frame, used for framerate-
         # independent physics.
-        clock.tick(60) / 1000
+        clock.tick(60)
 
     gui.end_game()
 
