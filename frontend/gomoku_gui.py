@@ -4,7 +4,7 @@ from frontend.board import Board
 
 
 # 遊戲介面
-class Gui(pygame.sprite.Sprite):
+class Gomoku_Gui(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
         pygame.init()

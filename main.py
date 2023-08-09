@@ -1,14 +1,14 @@
 import pygame
 
-from frontend.gui import Gui
+from frontend.gomoku_gui import Gomoku_Gui
 
 
 def main():
     # 繪製圖形化介面
-    gui = Gui()
-    gui_surface = gui.get_Surface()
+    gomoku_gui = Gomoku_Gui()
+    gomoku_gui_surface = gomoku_gui.get_Surface()
 
-    clock = gui.pygame_clock
+    clock = gomoku_gui.pygame_clock
     running = True
 
     while running:
@@ -19,17 +19,17 @@ def main():
                 running = False
 
         # 把棋盤繪製到遊戲介面上
-        gui.draw_board(gui_surface)
+        gomoku_gui.draw_board(gomoku_gui_surface)
 
         # 更新遊戲畫面
-        gui.update()
+        gomoku_gui.update()
 
         # limits FPS to 60
         # dt is delta time in seconds since last frame, used for framerate-
         # independent physics.
         clock.tick(60)
 
-    gui.end_game()
+    gomoku_gui.end_game()
 
 
 if __name__ == "__main__":
