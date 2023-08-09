@@ -8,13 +8,13 @@ class Board(pygame.sprite.Sprite):
         # 儲存格長度
         self.cell_len = 40
         # 棋盤線條數量 ( 幾乘幾的棋盤 )
-        self.line_count = 15
+        self.line_total_count = 15
         # 棋盤總長度
-        self.board_len_count = self.cell_len * (self.line_count + 1)
+        self.board_len = self.cell_len * (self.line_total_count + 1)
         # 棋盤背景色
         self.light_yellow_color = "#FFE153"
         #  四角 + 中間圓點的大小，數字越大，圓越大
-        self.star_point_width = 5
+        self.black_circle_width = 5
 
     def get_surface(self) -> pygame.Surface:
         """
@@ -22,11 +22,10 @@ class Board(pygame.sprite.Sprite):
         """
 
         # 棋盤總長度
-        board_len_count = self.board_len_count
-        board_color = self.light_yellow_color
+        board_len = self.board_len
 
-        board = pygame.Surface(size=(board_len_count, board_len_count))
-        board.fill(board_color)
+        board = pygame.Surface(size=(board_len, board_len))
+        board.fill(self.light_yellow_color)
         return board
 
     def draw_board(self, surface: pygame.Surface):
@@ -38,51 +37,60 @@ class Board(pygame.sprite.Sprite):
         # 儲存格長度
         cell_len = self.cell_len
         # 棋盤線條數量 ( 幾乘幾的棋盤 )
-        line_count = self.line_count
+        line_total_count = self.line_total_count
 
-        for i in range(1, line_count + 1):
+        for i in range(1, line_total_count + 1):
             # board_x_list.append(i)
             # 起始座標
             start_pos = cell_len
             # 結束座標
-            end_pos = cell_len * line_count
+            end_pos = cell_len * line_total_count
             # 目前座標
             current_pos = cell_len * i
             # print(board_x_start, board_y_start, board_x_end, board_y_end)
             line_width = 1  # 寬度
             # 起始 & 最後一條線邊框加粗
-            if i == 1 or i == line_count:
+            if i == 1 or i == line_total_count:
                 line_width = 3
             # x 軸 橫線
             pygame.draw.line(surface, black, (start_pos, current_pos), (end_pos, current_pos), line_width)
             # y 軸  直線
             pygame.draw.line(surface, black, (current_pos, start_pos), (current_pos, end_pos), line_width)
 
-    def draw_star_point(self, surface: pygame.Surface):
+    def draw_black_circle(self, surface: pygame.Surface):
         """
         繪製四角四個 + 中間比較粗的圓點
         """
 
+        # # 儲存格長度
+        # cell_len = self.cell_len
+        # # 棋盤線條數量 ( 幾乘幾的棋盤 )
+        # board_line_count = self.line_total_count
+
+        # len_4_pos = 4 * cell_len # 160
+        # len_back_4_pos = (board_line_count - 3) * cell_len # 480
+        # len_center_pos = ((board_line_count + 1) / 2) * cell_len # 320
+        # print('len_4_pos: ', len_4_pos)
+        # print('len_back_4_pos', len_back_4_pos)
+        # print('len_center_pos', len_center_pos)
+        # # 繪製比較粗的圓點清單
+        # star_point_pos_list = [
+        #     (len_4_pos, len_4_pos),
+        #     (len_4_pos, len_back_4_pos),
+        #     (len_back_4_pos, len_4_pos),
+        #     (len_back_4_pos, len_back_4_pos),
+        #     (len_center_pos, len_center_pos),
+        # ]
         black = "black"
+        black_circle_width = self.black_circle_width
 
-        # 儲存格長度
-        cell_len = self.cell_len
-        # 棋盤線條數量 ( 幾乘幾的棋盤 )
-        board_line_count = self.line_count
-
-        star_point_width = self.star_point_width
-
-        len_4_pos = 4 * cell_len
-        len_back_4_pos = (board_line_count - 3) * cell_len
-        len_center_pos = ((board_line_count + 1) / 2) * cell_len
-
-        # 繪製比較粗的圓點清單
-        star_point_pos_list = [
-            (len_4_pos, len_4_pos),
-            (len_4_pos, len_back_4_pos),
-            (len_back_4_pos, len_4_pos),
-            (len_back_4_pos, len_back_4_pos),
-            (len_center_pos, len_center_pos),
+        black_circle_pos_list = [
+            (160, 160),
+            (160, 480),
+            (480, 160),
+            (480, 480),
+            (320, 320),
         ]
-        for i in range(len(star_point_pos_list)):
-            pygame.draw.circle(surface, black, star_point_pos_list[i], star_point_width)
+
+        for i in range(len(black_circle_pos_list)):
+            pygame.draw.circle(surface, black, black_circle_pos_list[i], black_circle_width)

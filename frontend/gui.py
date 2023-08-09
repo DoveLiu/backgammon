@@ -23,7 +23,7 @@ class Gui(pygame.sprite.Sprite):
         board = Board()
         board_surface = board.get_surface()
         board.draw_board(board_surface)
-        board.draw_star_point(board_surface)
+        board.draw_black_circle(board_surface)
         return board_surface
 
     def get_Surface(self) -> pygame.Surface:
@@ -47,12 +47,12 @@ class Gui(pygame.sprite.Sprite):
 
         gui_high = self.high
         gui_width = self.width
-        board_len_count = board.board_len_count
+        board_len = board.board_len
 
         board_surface = self.board_surface
 
-        board_init_width = (gui_width - board_len_count) / 2
-        board_init_high = (gui_high - board_len_count) / 2
+        board_init_width = (gui_width - board_len) / 2
+        board_init_high = (gui_high - board_len) / 2
         # 要把 Surface 元素畫在哪，目前置中
         gui_surface.blit(board_surface, (board_init_width, board_init_high))
 
