@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "backgammon"
+name = "gomoku"
 version = "0.1.0"
 description = ""
 authors = ["Dove <doveliu0516@gmail.com>"]
