@@ -2,7 +2,7 @@ import pygame
 
 
 # 棋盤
-class Board(pygame.sprite.Sprite):
+class Board():
     def __init__(self):
         super().__init__()
         # 儲存格長度
