@@ -62,25 +62,6 @@ class Board():
         繪製四角四個 + 中間比較粗的圓點
         """
 
-        # # 儲存格長度
-        # cell_len = self.cell_len
-        # # 棋盤線條數量 ( 幾乘幾的棋盤 )
-        # board_line_count = self.line_total_count
-
-        # len_4_pos = 4 * cell_len # 160
-        # len_back_4_pos = (board_line_count - 3) * cell_len # 480
-        # len_center_pos = ((board_line_count + 1) / 2) * cell_len # 320
-        # print('len_4_pos: ', len_4_pos)
-        # print('len_back_4_pos', len_back_4_pos)
-        # print('len_center_pos', len_center_pos)
-        # # 繪製比較粗的圓點清單
-        # star_point_pos_list = [
-        #     (len_4_pos, len_4_pos),
-        #     (len_4_pos, len_back_4_pos),
-        #     (len_back_4_pos, len_4_pos),
-        #     (len_back_4_pos, len_back_4_pos),
-        #     (len_center_pos, len_center_pos),
-        # ]
         black = "black"
         black_circle_width = self.black_circle_width
 
