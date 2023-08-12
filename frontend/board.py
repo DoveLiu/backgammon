@@ -1,5 +1,5 @@
 import pygame
-
+from resource.color_config import ColorConfig
 
 # 棋盤
 class Board():
@@ -11,8 +11,6 @@ class Board():
         self.line_total_count = 15
         # 棋盤總長度
         self.board_len = self.cell_len * (self.line_total_count + 1)
-        # 棋盤背景色
-        self.light_yellow_color = "#FFE153"
         #  四角 + 中間圓點的大小，數字越大，圓越大
         self.black_circle_width = 5
 
@@ -21,18 +19,15 @@ class Board():
         獲取矩形棋盤背景物件
         """
 
-        # 棋盤總長度
-        board_len = self.board_len
-
-        board = pygame.Surface(size=(board_len, board_len))
-        board.fill(self.light_yellow_color)
+        board = pygame.Surface(size=(self.board_len, self.board_len))
+        board.fill(ColorConfig.LIGHT_YELLOW_COLOR)
         return board
 
     def draw_board(self, surface: pygame.Surface):
         """
         繪製棋盤
         """
-        black = "black"
+        black = ColorConfig.BLACK
 
         # 儲存格長度
         cell_len = self.cell_len
@@ -40,7 +35,7 @@ class Board():
         line_total_count = self.line_total_count
 
         for i in range(1, line_total_count + 1):
-            # board_x_list.append(i)
+
             # 起始座標
             start_pos = cell_len
             # 結束座標
@@ -62,9 +57,6 @@ class Board():
         繪製四角四個 + 中間比較粗的圓點
         """
 
-        black = "black"
-        black_circle_width = self.black_circle_width
-
         black_circle_pos_list = [
             (160, 160),
             (160, 480),
@@ -74,4 +66,9 @@ class Board():
         ]
 
         for i in range(len(black_circle_pos_list)):
-            pygame.draw.circle(surface, black, black_circle_pos_list[i], black_circle_width)
+            pygame.draw.circle(
+                surface,
+                ColorConfig.BLACK, 
+                black_circle_pos_list[i], 
+                self.black_circle_width
+            )
