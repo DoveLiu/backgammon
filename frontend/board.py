@@ -58,17 +58,18 @@ class Board():
         """
 
         black_circle_pos_list = [
-            (160, 160),
-            (160, 480),
-            (480, 160),
-            (480, 480),
-            (320, 320),
+            (4, 4),
+            (4, 12),
+            (12, 4),
+            (12, 12),
+            (8, 8),
         ]
 
-        for black_circle_pos in black_circle_pos_list:
+        for pos in black_circle_pos_list:
+            x, y = pos
             pygame.draw.circle(
                 surface,
                 ColorConfig.BLACK, 
-                black_circle_pos, 
+                (x * self.cell_len, y * self.cell_len),
                 self.black_circle_width
             )
