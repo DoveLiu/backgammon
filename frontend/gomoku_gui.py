@@ -1,7 +1,7 @@
 import pygame
 
 from frontend.board import Board
-from resource.color_config import ColorConfig
+from resource.color import Color
 
 # 遊戲介面
 class Gomoku_Gui():
@@ -31,7 +31,7 @@ class Gomoku_Gui():
         """
 
         screen = pygame.display.set_mode((self.width, self.high))
-        screen.fill(ColorConfig.LIGHT_GRAY_COLOR.value)
+        screen.fill(Color.LIGHT_GRAY.value)
         return screen
 
     def draw_board(self, gui_surface: pygame.Surface):

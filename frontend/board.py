@@ -1,5 +1,5 @@
 import pygame
-from resource.color_config import ColorConfig
+from resource.color import Color
 
 # 棋盤
 class Board():
@@ -16,14 +16,14 @@ class Board():
         """
 
         board = pygame.Surface(size=(self.total_len, self.total_len))
-        board.fill(ColorConfig.LIGHT_YELLOW_COLOR.value)
+        board.fill(Color.LIGHT_YELLOW.value)
         return board
 
     def draw_board(self, surface: pygame.Surface):
         """
         繪製棋盤
         """
-        black = ColorConfig.BLACK.value
+        black = Color.BLACK.value
 
         cell_len = self.cell_len
         line_total_count = self.line_count
@@ -58,7 +58,7 @@ class Board():
             x, y = pos
             pygame.draw.circle(
                 surface,
-                ColorConfig.BLACK.value, 
+                Color.BLACK.value, 
                 (x * self.cell_len, y * self.cell_len),
                 self.black_circle_width
             )
