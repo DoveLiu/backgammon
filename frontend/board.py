@@ -65,10 +65,10 @@ class Board():
             (320, 320),
         ]
 
-        for i in range(len(black_circle_pos_list)):
+        for black_circle_pos in black_circle_pos_list:
             pygame.draw.circle(
                 surface,
                 ColorConfig.BLACK, 
-                black_circle_pos_list[i], 
+                black_circle_pos, 
                 self.black_circle_width
             )
