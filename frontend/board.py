@@ -5,13 +5,9 @@ from resource.color_config import ColorConfig
 class Board():
     def __init__(self):
         super().__init__()
-        # 儲存格長度
         self.cell_len = 40
-        # 棋盤線條數量 ( 幾乘幾的棋盤 )
         self.line_count = 15
-        # 棋盤總長度
         self.total_len = self.cell_len * (self.line_count + 1)
-        #  四角 + 中間圓點的大小，數字越大，圓越大
         self.black_circle_width = 5
 
     def get_surface(self) -> pygame.Surface:
@@ -29,27 +25,20 @@ class Board():
         """
         black = ColorConfig.BLACK
 
-        # 儲存格長度
         cell_len = self.cell_len
-        # 棋盤線條數量 ( 幾乘幾的棋盤 )
         line_total_count = self.line_count
 
         for i in range(1, line_total_count + 1):
 
-            # 起始座標
             start_pos = cell_len
-            # 結束座標
             end_pos = cell_len * line_total_count
-            # 目前座標
             current_pos = cell_len * i
-            # print(board_x_start, board_y_start, board_x_end, board_y_end)
-            line_width = 1  # 寬度
-            # 起始 & 最後一條線邊框加粗
+            line_width = 1  
             if i == 1 or i == line_total_count:
                 line_width = 3
-            # x 軸 橫線
+            # x 軸 
             pygame.draw.line(surface, black, (start_pos, current_pos), (end_pos, current_pos), line_width)
-            # y 軸  直線
+            # y 軸  
             pygame.draw.line(surface, black, (current_pos, start_pos), (current_pos, end_pos), line_width)
 
     def draw_black_circle(self, surface: pygame.Surface):
