@@ -16,14 +16,14 @@ class Board():
         """
 
         board = pygame.Surface(size=(self.total_len, self.total_len))
-        board.fill(ColorConfig.LIGHT_YELLOW_COLOR)
+        board.fill(ColorConfig.LIGHT_YELLOW_COLOR.value)
         return board
 
     def draw_board(self, surface: pygame.Surface):
         """
         繪製棋盤
         """
-        black = ColorConfig.BLACK
+        black = ColorConfig.BLACK.value
 
         cell_len = self.cell_len
         line_total_count = self.line_count
@@ -58,7 +58,7 @@ class Board():
             x, y = pos
             pygame.draw.circle(
                 surface,
-                ColorConfig.BLACK, 
+                ColorConfig.BLACK.value, 
                 (x * self.cell_len, y * self.cell_len),
                 self.black_circle_width
             )

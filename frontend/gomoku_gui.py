@@ -31,7 +31,7 @@ class Gomoku_Gui():
         """
 
         screen = pygame.display.set_mode((self.width, self.high))
-        screen.fill(ColorConfig.LIGHT_GRAY_COLOR)
+        screen.fill(ColorConfig.LIGHT_GRAY_COLOR.value)
         return screen
 
     def draw_board(self, gui_surface: pygame.Surface):
