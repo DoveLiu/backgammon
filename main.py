@@ -5,7 +5,7 @@ from frontend.gomoku_gui import Gomoku_Gui
 
 def main():
     gomoku_gui = Gomoku_Gui()
-    gomoku_gui_surface = gomoku_gui.get_Surface()
+    gomoku_gui_surface = gomoku_gui.get_surface()
 
     clock = gomoku_gui.pygame_clock
     running = True

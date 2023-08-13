@@ -25,7 +25,7 @@ class Gomoku_Gui():
         board.draw_black_circle(board_surface)
         return board_surface
 
-    def get_Surface(self) -> pygame.Surface:
+    def get_surface(self) -> pygame.Surface:
         """
         獲取矩形遊戲介面物件
         """
