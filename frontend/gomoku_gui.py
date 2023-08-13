@@ -40,8 +40,8 @@ class Gomoku_Gui():
         """
         board = Board()
 
-        board_init_width = (self.width - board.board_len) / 2
-        board_init_high = (self.high - board.board_len) / 2
+        board_init_width = (self.width - board.total_len) / 2
+        board_init_high = (self.high - board.total_len) / 2
         # 要把 Surface 元素畫在哪，目前置中
         gui_surface.blit(self.board_surface, (board_init_width, board_init_high))
 

@@ -8,9 +8,9 @@ class Board():
         # 儲存格長度
         self.cell_len = 40
         # 棋盤線條數量 ( 幾乘幾的棋盤 )
-        self.line_total_count = 15
+        self.line_count = 15
         # 棋盤總長度
-        self.board_len = self.cell_len * (self.line_total_count + 1)
+        self.total_len = self.cell_len * (self.line_count + 1)
         #  四角 + 中間圓點的大小，數字越大，圓越大
         self.black_circle_width = 5
 
@@ -19,7 +19,7 @@ class Board():
         獲取矩形棋盤背景物件
         """
 
-        board = pygame.Surface(size=(self.board_len, self.board_len))
+        board = pygame.Surface(size=(self.total_len, self.total_len))
         board.fill(ColorConfig.LIGHT_YELLOW_COLOR)
         return board
 
@@ -32,7 +32,7 @@ class Board():
         # 儲存格長度
         cell_len = self.cell_len
         # 棋盤線條數量 ( 幾乘幾的棋盤 )
-        line_total_count = self.line_total_count
+        line_total_count = self.line_count
 
         for i in range(1, line_total_count + 1):
 
