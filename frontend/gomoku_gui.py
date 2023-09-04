@@ -1,16 +1,21 @@
+from resource.color import Color
+
 import pygame
 
 from frontend.board import Board
-from resource.color import Color
+
 
 # 遊戲介面
-class Gomoku_Gui():
+class Gomoku_Gui:
     def __init__(self):
         super().__init__()
         pygame.init()
         self.high = 720
         self.width = 1280
         self.pygame_clock = pygame.time.Clock()
+        board = Board()
+        self.board_init_pos_width = (self.width - board.total_len) / 2
+        self.board_init_pos_high = (self.high - board.total_len) / 2
 
         board_surface = self.board_init()
         self.board_surface = board_surface
@@ -25,6 +30,17 @@ class Gomoku_Gui():
         board.draw_black_circle(board_surface)
         return board_surface
 
+    def get_go_stone_pos_list(self) -> list:
+        """
+        獲取棋子位置二維陣列
+        """
+        board = Board()
+        pos_list = []
+        for i in range(1, (board.line_count + 1)):
+            for j in range(1, (board.line_count + 1)):
+                pos_list.append((i, j))
+        return pos_list
+
     def get_surface(self) -> pygame.Surface:
         """
         獲取矩形遊戲介面物件
@@ -38,11 +54,7 @@ class Gomoku_Gui():
         """
         把棋盤矩形物件，繪製到遊戲介面矩形物件上
         """
-        board = Board()
-
-        board_init_width = (self.width - board.total_len) / 2
-        board_init_high = (self.high - board.total_len) / 2
-        gui_surface.blit(self.board_surface, (board_init_width, board_init_high))
+        gui_surface.blit(self.board_surface, (self.board_init_pos_width, self.board_init_pos_high))
 
     def update(self):
         """
